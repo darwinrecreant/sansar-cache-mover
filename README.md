@@ -9,7 +9,7 @@ This windows script will set a new location to store Sansar cache that is normal
 3. Double click `sansar-cache-mover.bat`
 4. Follow the instructions and paste the path of the new folder when it asks you.
 
-The script will delete your existing sansar cache. If you do not want it to be deleted, then copy the contents of the old cache folder to your new folder before running this script.
+The script will delete your existing sansar cache folder, which includes your Sansar preferences. If you do not want it to be deleted, then copy the contents of the old cache folder to your new folder before running this script.
 
 If you want to use the old folder location again, go back to AppData\Local and delete `LindenLab` folder link (it will have a shortuct icon on it). Next time Sansar is opened it will create a new cache folder in the old place.
 
