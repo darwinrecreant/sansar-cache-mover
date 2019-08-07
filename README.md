@@ -6,7 +6,7 @@ This windows script will set a new location to store Sansar cache that is normal
 
 1. Download `sansar-cache-mover.bat` from this repository
 2. Create a folder where ever you want the new location to be, can be differnt drive as well
-3. Double click `sansar-cache-mover.bat`
+3. Double click `sansar-cache-mover.bat`, and make sure Sansar is closed.
 4. Follow the instructions and paste the path of the new folder when it asks you.
 
 The script will delete your existing sansar cache folder, which includes your Sansar preferences. If you do not want it to be deleted, then copy the contents of the old cache folder to your new folder before running this script.
