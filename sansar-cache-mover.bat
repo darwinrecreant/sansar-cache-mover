@@ -1,0 +1,47 @@
+@echo OFF
+
+if not exist "%USERPROFILE%\AppData\Local" (
+  echo AppData not found.
+  pause 10
+  GOTO END
+)
+set LL="%USERPROFILE%\AppData\Local\LindenLab"
+
+echo.
+echo App data found, now will delete Sansar cache (%LL%), continue? ([y]/n)
+
+set /p continue2=
+if /i "%continue2%" == "n" goto END
+
+if exist "%LL%" (
+  rmdir %LL% /S
+)
+
+:ASKPATH
+
+echo.
+echo What path do you want to store the Sansar cache folder in? (someting like D:\AppData\Local\LindenLab)
+set /p newLL=
+
+If NOT "%newLL%"=="%newLL::\=%" (
+  if "%newLL%" == "" (
+    echo This must be an path like D:\AppData\Local\LindenLab, or any folder
+    goto ASKPATH
+  )
+) else (
+  echo This must be an path like D:\AppData
+  goto ASKPATH
+)
+
+echo.
+echo Creating symbolic link between old Sansar folder to new Sansar folder (%newLL%), continue? ([y]/n)
+set /p continue3=
+if /i "%continue3%" == "n" goto END
+
+mkdir %newLL%
+mklink /d %LL% %newLL%
+
+echo.
+echo Sansar cache stored in new location successfully. From now on to delete cache, delete it in the new location.
+pause 10
+:END
